@@ -1,6 +1,6 @@
 # tdast-util-from-csv
 
-[**tdast**][tdast] utility to parse [RFC-4180][] compliant csv into tdast.  
+[**tdast**][tdast] utility to parse csv into tdast ([RFC-4180][] compliant).
 
 ---
 
@@ -293,6 +293,6 @@ If there are any issues or you want to implement this in a more elegant/efficien
 
 <!-- Definitions -->
 [dfn-unist-position]: https://github.com/syntax-tree/unist#position
-[rfc-4180]: https://tools.ietf.org/html/rfc418
+[rfc-4180]: https://tools.ietf.org/html/rfc4180
 [syntax-tree]: https://github.com/syntax-tree
 [tdast]: https://github.com/tdast/tdast
