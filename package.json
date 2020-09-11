@@ -1,0 +1,68 @@
+{
+  "name": "tdast-util-from-csv",
+  "version": "0.1.0",
+  "description": "tdast utility to parse csv into tdast",
+  "license": "MIT",
+  "homepage": "https://github.com/tdast/tdast-util-from-csv",
+  "repository": "https://github.com/tdast/tdast-util-from-csv",
+  "bugs": "https://github.com/tdast/tdast-util-from-csv/issues",
+  "author": "Chris Zhou <chrisrzhou@pm.me> (https://chrisrzhou.io)",
+  "keywords": [
+    "tdast",
+    "util",
+    "csv",
+    "tabular",
+    "data",
+    "ast",
+    "unist"
+  ],
+  "scripts": {
+    "bootstrap": "npm install",
+    "build": "microbundle",
+    "clean": "rm -rf dist",
+    "dev": "microbundle watch",
+    "lint": "xo --fix; tsc",
+    "prepare": "npm run clean; npm run build",
+    "release": "standard-version -s --infile changelog.md",
+    "test": "jest --watch packages",
+    "test:run": "jest"
+  },
+  "typings": "types/index.d.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "dependencies": {
+    "tdast-types": "^0.1.2",
+    "tdastscript": "^0.1.2"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.11.5",
+    "@types/jest": "^26.0.9",
+    "babel-jest": "^26.2.2",
+    "dedent": "^0.7.0",
+    "husky": "^4.3.0",
+    "jest": "^26.4.2",
+    "microbundle": "^0.12.3",
+    "standard-version": "^9.0.0",
+    "typescript": "^4.0.2",
+    "xo": "^0.33.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm prepare; npm run lint; npm run test:run"
+    }
+  },
+  "prettier": {
+    "bracketSpacing": true,
+    "jsxBracketSameLine": true,
+    "trailingComma": "all",
+    "useTabs": false
+  },
+  "xo": {
+    "env": [
+      "jest"
+    ],
+    "prettier": true
+  }
+}
