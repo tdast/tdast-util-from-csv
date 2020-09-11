@@ -66,7 +66,8 @@
     "prettier": true,
     "rules": {
       "capitalized-comments": "off",
-      "padding-line-between-statements": "off"
+      "padding-line-between-statements": "off",
+      "unicorn/no-reduce": "off"
     }
   }
 }
