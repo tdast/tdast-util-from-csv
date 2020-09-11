@@ -88,12 +88,13 @@ describe(fromCsv, () => {
   });
 
   describe('kitchen sink', () => {
-    it('should handle all edge cases and return a tree with multiple rows', () => {
+    it.only('should handle all edge cases and return a tree with multiple rows', () => {
       const csv = dedent`
         "col1","c""o""""l,2,,","co\nl\n\n3\n"
         row1col1,  row1col2  ," row1col3\n,\n"""
         "\nrow2col1",row2col2,row2col3\n
       `;
+      console.log(csv.indexOf('row2col2'));
       expect(fromCsv(csv, { headers: true })).toEqual([
         ['col1', 'c"o""l,2,,', 'co\nl\n\n3\n'],
         ['row1col1', '  row1col2  ', ' row1col3\n,\n"'],
