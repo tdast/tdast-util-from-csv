@@ -1,6 +1,6 @@
 {
   "name": "tdast-util-from-csv",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "tdast utility to parse RFC-4180 compliant csv into tdast",
   "license": "MIT",
   "homepage": "https://github.com/tdast/tdast-util-from-csv",
