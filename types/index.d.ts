@@ -14,5 +14,5 @@ export default function fromCsv(
   // RFC-4180 compliant CSV string
   csv: string,
   // optional options to configure parser
-  options?: Options
+  options?: Options,
 ): Table;

@@ -28,6 +28,9 @@
     "test": "jest --watch packages",
     "test:run": "jest"
   },
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "source": "index.js",
   "typings": "types/index.d.ts",
   "files": [
     "dist",
