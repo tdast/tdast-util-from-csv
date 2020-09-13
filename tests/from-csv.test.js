@@ -13,7 +13,7 @@ describe(fromCsv, () => {
   });
 
   describe('RFC-4180-1', () => {
-    it('rows are delimited by line breaks', () => {
+    it('should delimit rows with line breaks', () => {
       expect(fromCsv('col1,col2,col3\nrow1col1,row1col2,row1col3')).toEqual({
         type: 'table',
         position: {
@@ -433,99 +433,6 @@ describe(fromCsv, () => {
     });
   });
 
-  describe('RFC-4180-2', () => {
-    it('accepts optional ending line break.', () => {
-      expect(fromCsv('col1,col2,col3\n')).toEqual({
-        type: 'table',
-        position: {
-          start: {
-            line: 1,
-            column: 1,
-            offset: 0,
-          },
-          end: {
-            line: 1,
-            column: 15,
-            offset: 14,
-          },
-        },
-        children: [
-          {
-            type: 'row',
-            index: 0,
-            position: {
-              start: {
-                line: 1,
-                column: 1,
-                offset: 0,
-              },
-              end: {
-                line: 1,
-                column: 15,
-                offset: 14,
-              },
-            },
-            children: [
-              {
-                type: 'cell',
-                value: 'col1',
-                columnIndex: 0,
-                rowIndex: 0,
-                position: {
-                  start: {
-                    line: 1,
-                    column: 1,
-                    offset: 0,
-                  },
-                  end: {
-                    line: 1,
-                    column: 5,
-                    offset: 4,
-                  },
-                },
-              },
-              {
-                type: 'cell',
-                value: 'col2',
-                columnIndex: 1,
-                rowIndex: 0,
-                position: {
-                  start: {
-                    line: 1,
-                    column: 6,
-                    offset: 5,
-                  },
-                  end: {
-                    line: 1,
-                    column: 10,
-                    offset: 9,
-                  },
-                },
-              },
-              {
-                type: 'cell',
-                value: 'col3',
-                columnIndex: 2,
-                rowIndex: 0,
-                position: {
-                  start: {
-                    line: 1,
-                    column: 11,
-                    offset: 10,
-                  },
-                  end: {
-                    line: 1,
-                    column: 15,
-                    offset: 14,
-                  },
-                },
-              },
-            ],
-          },
-        ],
-      });
-    });
-  });
 
   describe('RFC-4180-3', () => {
     it('should apply header', () => {
@@ -619,7 +526,7 @@ describe(fromCsv, () => {
   });
 
   describe('RFC-4180-4', () => {
-    it('should transform csv-delimited string', () => {
+    it('should separate fields (cells) by commas', () => {
       expect(fromCsv('col1,col2,col3')).toEqual({
         type: 'table',
         position: {
